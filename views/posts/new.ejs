@@ -6,20 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Post</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            border: 1px solid black;
+            padding: 10px 10px;
+            width: 400px;
+            margin: 100px auto;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 0;
+        }
+        button {
+            margin-top: 5px;
+            padding: 8px 20px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Make a new Post</h1>
-    <form method="POST" action="/posts">
-        <label for="user">Enter Name:</label>
-        <input id="user" name="user" type="text" placeholder="name">
-        <br>
-        <label for="bio">Enter Bio:</label>
-        <br>
-        <textarea name="bio" id="bio" cols="32" rows="3"></textarea>
-        <br>
-        <button>Submit</button>
-    </form>
+    <div class="container">
+        <h1>Make a new Post</h1>
+        <form method="POST" action="/posts">
+            <label for="user">Enter Name:</label>
+            <input id="user" name="user" type="text" placeholder="name">
+            <br>
+            <label for="bio">Enter Bio:</label>
+            <br>
+            <textarea name="bio" id="bio" cols="32" rows="3"></textarea>
+            <br>
+            <button>Submit</button>
+        </form>
+    </div>
 </body>
 
 </html>
