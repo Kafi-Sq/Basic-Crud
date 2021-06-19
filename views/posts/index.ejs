@@ -1,23 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Posts</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .add {
+            margin: 0 0 5px 10px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 2px;
+        }
+
+        .add a{
+            text-decoration: none;
+        }
+
+        .container {
+            width: 600px;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: 10px;
+            padding-bottom: 10px;
+        }
+
+        .container p {
+            padding-left: 10px;
+            margin-top: 2px;
+        }
+
+        form {
+            float: left;
+        }
+        form button {
+            margin: 0 10px;
+            background-color: rgb(252, 70, 70);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 2px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .edit {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 2px;
+            background-color: palegreen;
+            cursor: pointer;
+            color: white;
+        }
+
+        .edit a {
+            text-decoration: none;
+        }
+
+        h1 {
+            margin: 10px
+        }
+
+        hr:last-child,
+        hr:first-child {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
     <h1>Posts</h1>
-    <button><a href="/posts/new">New Post</a></button>
-    <% for (i of info){ %>
-        <p><b><%= i.user %> - </b></p>
-        <p><%= i.bio %> </p>
-        <button><a href="/posts/<%= i.id %>/edit">Edit</a></button>
-        <form method="POST" action="/posts/<%= i.id %>?_method=DELETE">
-            <button>Delete</button>
-        </form>
+    <button class="add"><a href="/posts/new">New Post</a></button>
+    <div class="container">
         <hr>
-    <% } %>
-    
+        <% for (i of info){ %>
+            <p><b>
+                    <%= i.user %> -
+                </b></p>
+            <p>
+                <%= i.bio %>
+            </p>
+            <button class="edit"><a href="/posts/<%= i.id %>/edit">Edit</a></button>
+            <form method="POST" action="/posts/<%= i.id %>?_method=DELETE">
+                <button>Delete</button>
+            </form>
+            <hr>
+            <% } %>
+    </div>
 </body>
+
 </html>

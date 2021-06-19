@@ -11,21 +11,7 @@ app.set('views', path.join(__dirname, 'views'))
 app.use(methodOverride('_method'))
 
 let info = [
-    {
-        id: uuid(),
-        user: 'Hassen Hassen',
-        bio: 'Comp Sci Student at St. Cloud State University'
-    },
-    {
-        id: uuid(),
-        user: 'Hassen Hassen',
-        bio: 'Comp Sci Student at St. Cloud State University'
-    },
-    {
-        id: uuid(),
-        user: 'Hassen Hassen',
-        bio: 'Comp Sci Student at St. Cloud State University'
-    }
+    
 ]
 
 app.get('/posts', (req, res) => {
