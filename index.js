@@ -14,6 +14,7 @@ let info = [
     
 ]
 
+// renders the index page with everyhting
 app.get('/posts', (req, res) => {
     res.render('posts/index', { info })
 })
@@ -52,3 +53,4 @@ app.delete('/posts/:id', (req, res) => {
 app.listen(8080, () => {
     console.log('Listening on port: *8080')
 })
+
